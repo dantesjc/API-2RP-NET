@@ -14,7 +14,7 @@ function Dashboard() {
             <div className="row">
 
             <div className="col-3 border">
-                <label className="justify-content-center">Data</label>
+                <label className="">Data</label>
             </div>
 
             <div className="col-3 border">
