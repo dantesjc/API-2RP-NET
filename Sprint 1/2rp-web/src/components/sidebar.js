@@ -2,7 +2,6 @@ import { Drawer, useTheme } from '@mui/material'
 import { Box } from '@mui/system'
 import './Sidebar.css'
 import { Link } from 'react-router-dom'
-import powertech from '../assets/powertech.png'
 
 import React from 'react'
 
@@ -13,53 +12,26 @@ function Sidebar({ children }) {
         <>
 
             <Drawer variant='permanent'>
-                <Box width={theme.spacing(31)} height={theme.spacing(100)} className ='side-bar'>
-                      <div className='texto'>
+                <Box width={theme.spacing(28)} height={theme.spacing(100)} className ='side-bar'>
+                     <div className='texto'>
                         
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                                <Link to='/dashboard' className ='side-links'>
-                                    &nbsp;
-                                    &nbsp;
-                                    &nbsp;
-                                    &nbsp;
+                                <Link to='/dashboard' className ='side-links1'>
                                     Dashboard
                                 </Link>
-                                <br />
-                                <br />
-                                <Link to='/horaextra' className ='side-links'>
-                                    &nbsp;
+                                <Link to='/horaextra' className ='side-links2'>
                                     Apontar Hora Extra
                                 </Link>
-                                <br />
-                                <br />
-                                <Link to='/sobreaviso' className ='side-links'>
-                                    &nbsp;
+                                <Link to='/sobreaviso' className ='side-links3'>
                                     Apontar sobre aviso
                                 </Link>
                         
                     </div>
                     <div>
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        &nbsp;
-                        <img src={require('../assets/powertech.png')} height='140px' width='60%' />
+                        <img src={require('../assets/powertech.png')} height='140px' width='60%' className='logo'/>
                     </div>
                 </Box>
             </Drawer>
-            <Box height="100vh" marginLeft={theme.spacing(31)}>
+            <Box height="100vh" marginLeft={theme.spacing(28)}>
 
                 {children}
             </Box>
