@@ -70,6 +70,13 @@ function Dashboard() {
           </tr>
           </tbody>
           </Table>
+
+          <div className='border col-md-3 col-sm-12'>
+            teste
+          </div>
+          <div className='border col-md-6 col-sm-12'>
+            teste3
+          </div>
             </div>
         </Sidebar>
     )
