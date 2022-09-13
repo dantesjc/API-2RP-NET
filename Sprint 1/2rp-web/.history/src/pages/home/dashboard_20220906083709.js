@@ -1,9 +1,5 @@
-import React from 'react'
 import Sidebar from "../../components/sidebar"
 import Button from 'react-bootstrap/Button';
-import Table from 'react-bootstrap/Table';
-import { IconName } from "react-icons/bs";
-
 
 function Dashboard() {
     return (
@@ -19,7 +15,7 @@ function Dashboard() {
             </div>
 
             <div className="col-3 border">
-                <label>Início</label>
+                <label>Inicio</label>
             </div>
 
             <div className="col-3 border">
@@ -45,31 +41,6 @@ function Dashboard() {
             <div className="col-3 border">
             <Button variant="success">Confirmar</Button>
             </div>
-            </div>
-
-            {/* tabela */}
-            <div className="row">
-
-            <Table striped bordered hover responsive>
-        <thead>
-          <tr>
-            <th>Código Verba</th>
-            <th>Data</th>
-            <th>Hora Início</th>
-            <th>Hora fim</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1802</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          </tbody>
-          </Table>
             </div>
         </Sidebar>
     )

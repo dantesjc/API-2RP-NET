@@ -1,9 +1,6 @@
-import React from 'react'
 import Sidebar from "../../components/sidebar"
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-import { IconName } from "react-icons/bs";
-
 
 function Dashboard() {
     return (
@@ -15,7 +12,7 @@ function Dashboard() {
             <div className="row">
 
             <div className="col-3 border">
-                <label className="justify-content-center">Data</label>
+                <label className="">Data</label>
             </div>
 
             <div className="col-3 border">
@@ -50,12 +47,12 @@ function Dashboard() {
             {/* tabela */}
             <div className="row">
 
-            <Table striped bordered hover responsive>
+            <Table striped bordered hover>
         <thead>
           <tr>
             <th>Código Verba</th>
             <th>Data</th>
-            <th>Hora Início</th>
+            <th>hora Início</th>
             <th>Hora fim</th>
             <th>Status</th>
           </tr>

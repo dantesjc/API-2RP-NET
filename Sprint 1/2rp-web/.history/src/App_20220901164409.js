@@ -1,10 +1,8 @@
-import React from 'react'
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
+
 import Login from './pages/login/login'
 import Dashboard from './pages/home/dashboard'
-
-import Button from 'react-bootstrap'
 
 function App() {
   return (

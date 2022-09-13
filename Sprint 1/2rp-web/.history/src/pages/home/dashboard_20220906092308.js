@@ -1,4 +1,3 @@
-import React from 'react'
 import Sidebar from "../../components/sidebar"
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
@@ -15,7 +14,7 @@ function Dashboard() {
             <div className="row">
 
             <div className="col-3 border">
-                <label className="justify-content-center">Data</label>
+                <label className="">Data</label>
             </div>
 
             <div className="col-3 border">
@@ -31,7 +30,7 @@ function Dashboard() {
             {/* linha 2:inputs */}
             <div className="row">
 
-            <div className="col-3 border">
+            <div className="col-3 border justify-content-center">
                 <input></input>
             </div>
 
