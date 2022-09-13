@@ -2,11 +2,11 @@ import React from 'react'
 import {Link } from 'react-router-dom'
 import './login.css'
 function Login() {
-    return (
-        <div className='d-flex flex-row col-12'>
+        return(
+            <div className='d-flex flex-row col-12'>
             <div className='d-flex col-6 fundo3'>
-                <div className='row'>
-                    <img class="mx-auto" src="../../src/image/PowerTech_Logo.jpeg"></img>
+                <div className='logo'>
+                    <img src={require('../../assets/powertech.png')} height='80%' width='80%' />
                 </div>
             </div>
             <div className='text-light height fundo2 d-flex col-6 flex-column justify-content'>
@@ -32,13 +32,12 @@ function Login() {
                     </div>
                  </div>
                 <div class="tpm">
-                    <button className='fundo offset-3 mt-5'><Link to='/dashboard'> Logar </Link></button>
+                    <button className='fundo offset-2 mt-5 input1'><Link to='/dashboard'> Logar </Link></button>
                 </div>
             
             </div>    
-            
         </div>
-        
-    )
- }
+        )
+}
+
 export default Login
