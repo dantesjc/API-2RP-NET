@@ -13,6 +13,53 @@ const swaggerOptions = {
         "description": "API Documentation",
     },
     "basePath": "/",
+    "paths": {
+        "/products/findByName" :{
+            "get": {
+                "tags": ["Products"],
+                "parameters": {
+                    "in": "query",
+                    "name": "name",
+                    "type": "string" 
+                },
+                "responses": {
+                    
+                }
+            }
+        },
+
+        "/products" :{
+            "post": {
+                "tags": ["Products"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "price": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Produto criado"
+                    }
+                    
+                }
+            }
+        },
+    }
 }
 
 const PORT = process.env.PORT || 3000
