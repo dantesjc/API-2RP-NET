@@ -1,15 +1,15 @@
-import React from 'react'
 import Sidebar from "../../components/sidebar"
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
+import './sobreaviso.css'
 import { IconName } from "react-icons/bs";
 
 
-function Dashboard() {
+function Sobreaviso() {
     return (
         <Sidebar>
-            <div className="d-flex justify-content-between border">
-                <label>Apontar Hora Extra</label>
+            <div className="uppermargem">
+                <label className="titulo">Apontar Sobre Aviso</label>
             </div>
             {/* linha 1 data, inicio, fim */}
             <div className="row">
@@ -70,16 +70,9 @@ function Dashboard() {
           </tr>
           </tbody>
           </Table>
-
-          <div className='border col-md-3 col-sm-12'>
-            teste
-          </div>
-          <div className='border col-md-6 col-sm-12'>
-            teste3
-          </div>
             </div>
         </Sidebar>
     )
 }
 
-export default Dashboard
+export default Sobreaviso
