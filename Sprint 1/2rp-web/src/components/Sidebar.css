@@ -1,36 +1,8 @@
-.side-links1 {
-    position: absolute;
+.side-links {
     color: #fff;
     text-decoration: none;;
-    font-size: 22px;
+    font-size: 20px;
     display: flex;
-    font-family: 'Montserrat', sans-serif;
-    top: 10%;
-}
-
-.side-links2 {
-    position: absolute;
-    color: #fff;
-    text-decoration: none;;
-    font-size: 22px;
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
-    top: 20%;
-}
-
-.side-links3 {
-    position: absolute;
-    color: #fff;
-    text-decoration: none;;
-    font-size: 22px;
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
-    top: 30%;
-}
-
-.texto{
-    display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -38,9 +10,9 @@
     background-color: #000030;
 }
 
-.logo{
-    display: flex;
+.footer{
+    margin-bottom: 20px;
+    margin-left: 35px;
     position: absolute;
-    left: 22%;
-    bottom: 1%;
+    bottom: 0;
 }
