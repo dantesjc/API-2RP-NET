@@ -1,5 +1,5 @@
-import Sidebar from "../../components/sidebar"
 import React, { Component }  from 'react';
+import Sidebar from "../../../components/sidebar"
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import './sobreaviso.css'
