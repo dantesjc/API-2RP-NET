@@ -46,18 +46,19 @@ function HoraExtra() {
         status: ''
     }
 
-    const setFormData = () => {
+    const setFormData = (form) => {
 
-        formData.code = value.code
-        formData.data = selectedDate.$d.getDate() + "/" + (selectedDate.$d.getMonth() + 1) + "/" + selectedDate.$d.getFullYear();
-        formData.start = selectedStart.$d.getHours() + ':' + selectedStart.$d.getMinutes()
-        formData.end = selectedEnd.$d.getHours() + ':' + selectedEnd.$d.getMinutes()
-        formData.status = value.status
+        form.code = value.code
+        form.data = selectedDate.$d.getDate() + "/" + (selectedDate.$d.getMonth() + 1) + "/" + selectedDate.$d.getFullYear();
+        form.start = selectedStart.$d.getHours() + ':' + selectedStart.$d.getMinutes()
+        form.end = selectedEnd.$d.getHours() + ':' + selectedEnd.$d.getMinutes()
+        form.status = value.status
 
     }
 
     const submit = (form) => {
-        setFormData();
+        setFormData(form);
+        console.log(form.code)
         // return
         // <td>{form.code}</td>
 
@@ -155,13 +156,12 @@ function HoraExtra() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr> {forms.map(el => <td>teste</td>  )}
-
-                                {/* <td>{formData.code}</td>
+                            <tr>
+                                <td>{formData.code}</td>
                                 <td>{formData.data}</td>
                                 <td>{formData.start}</td>
                                 <td>{formData.end}</td>
-                                <td>{formData.status}</td> */}
+                                <td>{formData.status}</td>
                             </tr>
                         </tbody>
                     </Table>
