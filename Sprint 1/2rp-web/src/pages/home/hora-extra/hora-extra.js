@@ -23,28 +23,44 @@ import Select from '@mui/material/Select';
 import './hora-extra.css'
 
 function HoraExtra() {
-    const [value, setValue] = useState();
-    const [date, setDate] = React.useState(dayjs(new Date()));
+    const [value, setValue] = useState({
+        code: '',
+        status: 'Pendente'
+    });
+    const [selectedDate, setDate] = useState(dayjs(new Date()))
+    const [selectedStart, setStart] = useState(dayjs(new Date()))
+    const [selectedEnd, setEnd] = useState(dayjs(new Date()))
 
     const handleChange = (value) => {
-        debugger;
-        console.log(value.target)
         setValue(prevValue => ({
             ...prevValue,
             [value.target.name]: value.target.value,
         }));
     };
 
-    const handleDate = (date) => {
-        console.log(date)
-        debugger;
-        setDate(prevValue => ({
-            ...prevValue,
-            [date]: date.$d,
-        }));
-    };
+    let formData = {
+        code: '',
+        data: '',
+        start: '',
+        end: '',
+        status: ''
+    }
 
-    const setPointing = () => {
+    const setFormData = () => {
+
+        formData.code = value.code
+        formData.data = selectedDate.$d.getDate() + "/" + (selectedDate.$d.getMonth() + 1) + "/" + selectedDate.$d.getFullYear();
+        formData.start = selectedStart.$d.getHours() + ':' + selectedStart.$d.getMinutes()
+        formData.end = selectedEnd.$d.getHours() + ':' + selectedEnd.$d.getMinutes()
+        formData.status = value.status
+
+    }
+
+    const submit = (form) => {
+        setFormData();
+        // return
+        // <td>{form.code}</td>
+
     }
 
     return (
@@ -63,12 +79,12 @@ function HoraExtra() {
                                     id="demo-simple-select"
                                     label="Código verba"
                                     name="code"
+                                    value={value.code}
                                     onChange={handleChange}>
                                     <MenuItem value={1601}>1601</MenuItem>
                                     <MenuItem value={1602}>1602</MenuItem>
                                     <MenuItem value={1809}>1809</MenuItem>
                                     <MenuItem value={3000}>3000</MenuItem>
-
                                 </Select>
                             </FormControl>
                         </Box>
@@ -78,9 +94,9 @@ function HoraExtra() {
                             <Stack spacing={3}>
                                 <DesktopDatePicker label="Data"
                                     inputFormat="DD/MM/YYYY"
-                                    value={date}
+                                    value={selectedDate}
                                     name="date"
-                                    onChange={handleDate}
+                                    onChange={date => setDate(date)}
                                     renderInput={(params) => <TextField {...params} />}
                                 >
                                 </DesktopDatePicker>
@@ -93,7 +109,8 @@ function HoraExtra() {
                             <Stack spacing={5}>
                                 <TimePicker
                                     label="Inicio"
-                                    onChange={handleChange}
+                                    value={selectedStart}
+                                    onChange={start => setStart(start)}
                                     renderInput={(params) => <TextField {...params} />}
                                 />
                             </Stack>
@@ -106,7 +123,8 @@ function HoraExtra() {
                             <Stack spacing={3}>
                                 <TimePicker readOnly disabled
                                     label="Fim"
-                                    onChange={handleChange}
+                                    value={selectedEnd}
+                                    onChange={end => setEnd(end)}
                                     renderInput={(params) => <TextField {...params} />}
                                 />
                             </Stack>
@@ -115,7 +133,10 @@ function HoraExtra() {
                     </div>
 
                     <div className="col-3 mt-3">
-                        <Button variant="success" onClick={() => setPointing}>Confirmar</Button>
+                        <Button variant="success"
+                            disabled={value.code == ''}
+                            onClick={() => submit(formData)
+                            }>Confirmar</Button>
                     </div>
                 </div>
 
@@ -134,12 +155,13 @@ function HoraExtra() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                            <tr> {forms.map(el => <td>teste</td>  )}
+
+                                {/* <td>{formData.code}</td>
+                                <td>{formData.data}</td>
+                                <td>{formData.start}</td>
+                                <td>{formData.end}</td>
+                                <td>{formData.status}</td> */}
                             </tr>
                         </tbody>
                     </Table>
