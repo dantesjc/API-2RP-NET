@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
@@ -21,18 +21,50 @@ import Select from '@mui/material/Select';
 
 
 import './hora-extra.css'
+import { createBreakpoints } from "@mui/system";
 
 function HoraExtra() {
-    const [value, setValue] = React.useState(dayjs(new Date()));
+    const [value, setValue] = useState({
+        code: '',
+        status: 'Pendente'
+    });
+    const [selectedDate, setDate] = useState(dayjs(new Date()))
+    const [selectedStart, setStart] = useState(dayjs(new Date()))
+    const [selectedEnd, setEnd] = useState(dayjs(new Date()))
 
-    const handleChange = (newValue) => {
-        setValue(newValue);
+    const handleChange = (value) => {
+        setValue(prevValue => ({
+            ...prevValue,
+            [value.target.name]: value.target.value,
+        }));
     };
-    const [code, setCode] = React.useState('');
 
-    const handleCode = (event) => {
-        setCode(event.target.value);
-    };
+    const apontamento = [{
+        code: '1809'
+    }]
+
+    let formData = {
+        code: '',
+        data: '',
+        start: '',
+        end: '',
+        status: ''
+    }
+
+    const setFormData = (form) => {
+        form.code = value.code
+        form.data = selectedDate.$d.getDate() + "/" + (selectedDate.$d.getMonth() + 1) + "/" + selectedDate.$d.getFullYear();
+        form.start = selectedStart.$d.getHours() + ':' + selectedStart.$d.getMinutes()
+        form.end = selectedEnd.$d.getHours() + ':' + selectedEnd.$d.getMinutes()
+        form.status = value.status
+        
+    }
+
+    const submit = (form) => {
+        setFormData(form);
+        console.log(form)
+
+    }
 
     return (
         <Sidebar>
@@ -45,19 +77,17 @@ function HoraExtra() {
                         <Box sx={{ minWidth: 120 }}>
                             <FormControl fullWidth>
                                 <InputLabel id="demo-simple-select-label">Verba</InputLabel>
-
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    value={code}
                                     label="Código verba"
-                                    onChange={handleCode}>
-
+                                    name="code"
+                                    value={value.code}
+                                    onChange={handleChange}>
                                     <MenuItem value={1601}>1601</MenuItem>
                                     <MenuItem value={1602}>1602</MenuItem>
                                     <MenuItem value={1809}>1809</MenuItem>
                                     <MenuItem value={3000}>3000</MenuItem>
-
                                 </Select>
                             </FormControl>
                         </Box>
@@ -67,8 +97,9 @@ function HoraExtra() {
                             <Stack spacing={3}>
                                 <DesktopDatePicker label="Data"
                                     inputFormat="DD/MM/YYYY"
-                                    value={value}
-                                    onChange={handleChange}
+                                    value={selectedDate}
+                                    name="date"
+                                    onChange={date => setDate(date)}
                                     renderInput={(params) => <TextField {...params} />}
                                 >
                                 </DesktopDatePicker>
@@ -81,8 +112,8 @@ function HoraExtra() {
                             <Stack spacing={5}>
                                 <TimePicker
                                     label="Inicio"
-                                    value={value}
-                                    onChange={handleChange}
+                                    value={selectedStart}
+                                    onChange={start => setStart(start)}
                                     renderInput={(params) => <TextField {...params} />}
                                 />
                             </Stack>
@@ -95,8 +126,8 @@ function HoraExtra() {
                             <Stack spacing={3}>
                                 <TimePicker readOnly disabled
                                     label="Fim"
-                                    value={value}
-                                    onChange={handleChange}
+                                    value={selectedEnd}
+                                    onChange={end => setEnd(end)}
                                     renderInput={(params) => <TextField {...params} />}
                                 />
                             </Stack>
@@ -105,15 +136,17 @@ function HoraExtra() {
                     </div>
 
                     <div className="col-3 mt-3">
-                        <Button variant="success">Confirmar</Button>
+                        <Button variant="success"
+                            disabled={value.code == ''}
+                            onClick={() => submit(formData)
+                            }>Confirmar</Button>
                     </div>
                 </div>
-
 
                 {/* tabela */}
                 <div className="row justify-content-center  col-md-10  mt-5">
 
-                    <Table striped bordered hover responsive className="">
+                    <Table striped bordered hover responsive >
                         <thead >
                             <tr>
                                 <th className="col-md-2">Código Verba</th>
@@ -125,17 +158,17 @@ function HoraExtra() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1802</td>
-                                <td>Table cell</td>
-                                <td>Table cell</td>
-                                <td>Table cell</td>
-                                <td>Table cell</td>
+                                <td>{value.code}</td>
+                                <td>{formData.data}</td>
+                                <td>{formData.start}</td>
+                                <td>{formData.end}</td>
+                                <td>{formData.status}</td>
                             </tr>
                         </tbody>
                     </Table>
                 </div>
             </div>
-        </Sidebar>
+        </Sidebar >
     )
 }
 
