@@ -12,22 +12,22 @@ function Sidebar({ children }) {
         <>
 
             <Drawer variant='permanent'>
-                <Box width={theme.spacing(28)} height={theme.spacing(100)} className ='side-bar'>
-                     <div className='texto'>
+                <Box width={theme.spacing(28)} height={theme.spacing(100)} className ='side-bar  '>
+                     <div className='texto mt-5'>
                         
-                                <Link to='/dashboard' className ='side-links1'>
+                                <Link to='/dashboard' className ='side-links mt-4'>
                                     Dashboard
                                 </Link>
-                                <Link to='/horaextra' className ='side-links2'>
+                                <Link to='/horaextra' className ='side-links mt-4'>
                                     Apontar Hora Extra
                                 </Link>
-                                <Link to='/sobreaviso' className ='side-links3'>
+                                <Link to='/sobreaviso' className ='side-links mt-4' >
                                     Apontar sobre aviso
                                 </Link>
                         
                     </div>
-                    <div>
-                        <img src={require('../assets/powertech.png')} height='140px' width='60%' className='logo'/>
+                    <div className='footer'>
+                        <img src={require('../assets/powertech.png')} height='140px' width='160px' />
                     </div>
                 </Box>
             </Drawer>

@@ -4,6 +4,8 @@ import { Gasto } from '../entity/Gasto'
 import { Usuario } from '../entity/Usuario'
 
 class GastoController {
+
+
     public async create(req: Request, res: Response): Promise<Response> {
         const { idusuario, descricao, valor } = req.body
         const usuario: any = await AppDataSource.manager.findOneBy(Usuario, { id: idusuario }).catch((e) => {
