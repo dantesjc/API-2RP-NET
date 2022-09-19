@@ -21,6 +21,7 @@ import Select from '@mui/material/Select';
 
 
 import './hora-extra.css'
+import { createBreakpoints } from "@mui/system";
 
 function HoraExtra() {
     const [value, setValue] = useState({
@@ -38,6 +39,10 @@ function HoraExtra() {
         }));
     };
 
+    const apontamento = [{
+        code: '1809'
+    }]
+
     let formData = {
         code: '',
         data: '',
@@ -47,20 +52,17 @@ function HoraExtra() {
     }
 
     const setFormData = (form) => {
-
         form.code = value.code
         form.data = selectedDate.$d.getDate() + "/" + (selectedDate.$d.getMonth() + 1) + "/" + selectedDate.$d.getFullYear();
         form.start = selectedStart.$d.getHours() + ':' + selectedStart.$d.getMinutes()
         form.end = selectedEnd.$d.getHours() + ':' + selectedEnd.$d.getMinutes()
         form.status = value.status
-
+        
     }
 
     const submit = (form) => {
         setFormData(form);
-        console.log(form.code)
-        // return
-        // <td>{form.code}</td>
+        console.log(form)
 
     }
 
@@ -141,7 +143,6 @@ function HoraExtra() {
                     </div>
                 </div>
 
-
                 {/* tabela */}
                 <div className="row justify-content-center  col-md-10  mt-5">
 
@@ -157,7 +158,7 @@ function HoraExtra() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{formData.code}</td>
+                                <td>{value.code}</td>
                                 <td>{formData.data}</td>
                                 <td>{formData.start}</td>
                                 <td>{formData.end}</td>
@@ -167,7 +168,7 @@ function HoraExtra() {
                     </Table>
                 </div>
             </div>
-        </Sidebar>
+        </Sidebar >
     )
 }
 
