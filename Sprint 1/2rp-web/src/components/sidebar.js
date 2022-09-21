@@ -34,8 +34,8 @@ function Sidebar({ children }) {
                     </div>
                 </Box>
             </Drawer>
+            
             <Box height="100vh" marginLeft={theme.spacing(28)}>
-
                 {children}
             </Box>
         </>

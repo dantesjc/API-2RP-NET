@@ -47,8 +47,8 @@ function Sobreaviso() {
 
     const Alert = React.forwardRef(function Alert(props, ref) {
         return <MuiAlert elevation={10} ref={ref} variant="filled" {...props} />;
-      });
-      
+    });
+
 
     const openSnack = (text, color) => {
         setOpen(true);
@@ -56,13 +56,13 @@ function Sobreaviso() {
         setColorSnack(color)
     };
 
-    const closeSnack = (event , reason) => {
+    const closeSnack = (event, reason) => {
         if (reason === 'clickaway') {
-          return;
+            return;
         }
-    
+
         setOpen(false);
-      };
+    };
 
     const [form, setForm] = useState({
         code: '',
@@ -73,10 +73,6 @@ function Sobreaviso() {
         delete: ''
     })
 
-    const resetForm = () => {
-        setValue('')
-
-    }
 
     const setFormData = () => {
         setForm({
@@ -87,8 +83,8 @@ function Sobreaviso() {
             status: "Pendente",
             delete: <button className="ml-4" onClick={deleteForm}><i class="bi bi-trash3"></i></button>
         })
-        resetForm();
     }
+
     const deleteForm = () => {
         setForm({
             code: '',
@@ -132,6 +128,7 @@ function Sobreaviso() {
                             </FormControl>
                         </Box>
                     </div>
+
                     <div className="col-md-2 col-sm-10 mt-3">
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <Stack spacing={3}>
