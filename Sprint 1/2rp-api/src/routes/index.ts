@@ -1,12 +1,8 @@
 import { Router, Request, Response } from "express"
-import usuario from './usuario'
-import gasto from './gasto'
 import colaborador from './colaborador'
 
 const routes = Router()
 
-routes.use("/usuario", usuario)
-routes.use("/gasto", gasto)
 routes.use("/colaborador", colaborador)
 
 //aceita qualquer método HTTP ou URL
