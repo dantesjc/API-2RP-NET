@@ -1,5 +1,4 @@
 import { Colaborador } from './Colaborador';
-import {status } from './../enum/status-enum';
 
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm"
 

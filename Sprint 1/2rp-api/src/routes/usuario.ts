@@ -1,11 +1,14 @@
-import { Router } from "express"
-import UsuarioController from "../controllers/UsuarioController"
+import { Router } from "express";
+import { CreateUsuarioController } from "./../controllers/CreateUsuarioController";
+import { DeleteUsuarioController } from "./../controllers/DeleteUsuarioController";
+import { GetAllUsuariosController } from "./../controllers/GetAllUsuariosController";
+import { UpdateUsuarioController } from "./../controllers/UpdateUsuarioController";
 
-const routes = Router()
+const routes = Router();
 
-routes.get('/', UsuarioController.list)
-routes.post('/', UsuarioController.create)
-routes.put('/', UsuarioController.update)
-routes.delete('/', UsuarioController.delete)
+routes.post("/usuarios", new CreateUsuarioController().handle);
+routes.get("/usuarios", new GetAllUsuariosController().handle);
+routes.delete("/usuarios/:id", new DeleteUsuarioController().handle);
+routes.put("/usuarios/:id", new UpdateUsuarioController().handle);
 
-export default routes
+export {routes}

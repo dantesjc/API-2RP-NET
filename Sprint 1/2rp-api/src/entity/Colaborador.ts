@@ -1,4 +1,3 @@
-import { perfil } from './../enum/perfil-enum';
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 @Entity({ name: "colaborador" })
