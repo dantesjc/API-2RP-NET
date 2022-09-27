@@ -14,14 +14,16 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import Stack from '@mui/material/Stack';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import InputLabel from '@mui/material/InputLabel';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+    
 
 import './hora-extra.css'
-import { createBreakpoints } from "@mui/system";
 
 function HoraExtra() {
     const [value, setValue] = useState({
@@ -31,6 +33,9 @@ function HoraExtra() {
     const [selectedDate, setDate] = useState(dayjs(new Date()))
     const [selectedStart, setStart] = useState(dayjs(new Date()))
     const [selectedEnd, setEnd] = useState(dayjs(new Date()))
+    const [open, setOpen] = React.useState(false);
+    const [textSnack, setTextSnack] = React.useState('');
+    const [colorSnack, setColorSnack] = React.useState('');
 
     const handleChange = (value) => {
         setValue(prevValue => ({
@@ -39,32 +44,68 @@ function HoraExtra() {
         }));
     };
 
-    const apontamento = [{
-        code: '1809'
-    }]
+    const Alert = React.forwardRef(function Alert(props, ref) {
+        return <MuiAlert elevation={10} ref={ref} variant="filled" {...props} />;
+      });
+      
 
-    let formData = {
+    const openSnack = (text, color) => {
+        setOpen(true);
+        setTextSnack(text)
+        setColorSnack(color)
+    };
+
+    const closeSnack = (event , reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        setOpen(false);
+      };
+
+    const [form, setForm] = useState({
         code: '',
         data: '',
         start: '',
         end: '',
-        status: ''
-    }
+        status: '',
+        delete: ''
+    })
 
-    const setFormData = (form) => {
-        form.code = value.code
-        form.data = selectedDate.$d.getDate() + "/" + (selectedDate.$d.getMonth() + 1) + "/" + selectedDate.$d.getFullYear();
-        form.start = selectedStart.$d.getHours() + ':' + selectedStart.$d.getMinutes()
-        form.end = selectedEnd.$d.getHours() + ':' + selectedEnd.$d.getMinutes()
-        form.status = value.status
-        
-    }
-
-    const submit = (form) => {
-        setFormData(form);
-        console.log(form)
+    const resetForm = () => {
+        setValue('')
 
     }
+
+    const setFormData = () => {
+        setForm({
+            code: value.code,
+            data: selectedDate.$d.getDate() + "/" + (selectedDate.$d.getMonth() + 1) + "/" + selectedDate.$d.getFullYear(),
+            start: selectedStart.$d.getHours() + ':' + selectedStart.$d.getMinutes(),
+            end: selectedEnd.$d.getHours() + ':' + selectedEnd.$d.getMinutes(),
+            status: "Pendente",
+            delete: <button className="ml-4" onClick={deleteForm}><i class="bi bi-trash3"></i></button>
+        })
+        resetForm();
+    }
+    const deleteForm = () => {
+        setForm({
+            code: '',
+            data: '',
+            start: '',
+            end: '',
+            status: '',
+            delete: ''
+        })
+
+        openSnack('Deletado com sucesso', 'error')
+    }
+
+    const submit = () => {
+        openSnack('Hora extra cadastrada com sucesso', 'success')
+        setFormData();
+    }
+
 
     return (
         <Sidebar>
@@ -124,7 +165,8 @@ function HoraExtra() {
                     <div className="col-md-2 col-sm-10 mt-3">
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <Stack spacing={3}>
-                                <TimePicker readOnly disabled
+                                <TimePicker
+                                    // <TimePicker readOnly disabled
                                     label="Fim"
                                     value={selectedEnd}
                                     onChange={end => setEnd(end)}
@@ -138,10 +180,11 @@ function HoraExtra() {
                     <div className="col-3 mt-3">
                         <Button variant="success"
                             disabled={value.code == ''}
-                            onClick={() => submit(formData)
+                            onClick={() => submit()
                             }>Confirmar</Button>
                     </div>
                 </div>
+
 
                 {/* tabela */}
                 <div className="row justify-content-center  col-md-10  mt-5">
@@ -149,25 +192,32 @@ function HoraExtra() {
                     <Table striped bordered hover responsive >
                         <thead >
                             <tr>
-                                <th className="col-md-2">Código Verba</th>
+                                <th className="col-md-2 ">Código Verba</th>
                                 <th className="col-md-2">Data</th>
                                 <th className="col-md-2">Hora Início</th>
                                 <th className="col-md-2">Hora fim</th>
                                 <th className="col-md-2">Status</th>
+                                <th className="col-md-1">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{value.code}</td>
-                                <td>{formData.data}</td>
-                                <td>{formData.start}</td>
-                                <td>{formData.end}</td>
-                                <td>{formData.status}</td>
+                                <td>{form.code}</td>
+                                <td>{form.data}</td>
+                                <td>{form.start}</td>
+                                <td>{form.end}</td>
+                                <td>{form.status}</td>
+                                <td>{form.delete}</td>
                             </tr>
                         </tbody>
                     </Table>
                 </div>
             </div>
+            <Snackbar open={open} autoHideDuration={3000} onClose={closeSnack}>
+                <Alert onClose={closeSnack} severity={colorSnack} sx={{ width: '100%' }}>
+                    {textSnack}
+                </Alert>
+            </Snackbar>
         </Sidebar >
     )
 }

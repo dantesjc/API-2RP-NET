@@ -22,7 +22,10 @@ function Sidebar({ children }) {
                                     Apontar Hora Extra
                                 </Link>
                                 <Link to='/sobreaviso' className ='side-links mt-4' >
-                                    Apontar sobre aviso
+                                    Apontar Sobreaviso
+                                </Link>
+                                <Link to='/login' className ='side-links mt-4' >
+                                    Sair
                                 </Link>
                         
                     </div>
@@ -31,8 +34,8 @@ function Sidebar({ children }) {
                     </div>
                 </Box>
             </Drawer>
+            
             <Box height="100vh" marginLeft={theme.spacing(28)}>
-
                 {children}
             </Box>
         </>

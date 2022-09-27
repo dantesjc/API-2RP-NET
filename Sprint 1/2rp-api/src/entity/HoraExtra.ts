@@ -1,31 +1,37 @@
 import { Colaborador } from './Colaborador';
-import {status } from './../enum/status-enum';
+import { status } from './../enum/status-enum';
 
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, CreateDateColumn } from "typeorm"
 
 @Entity({ name: "horaExtra" })
 export class HoraExtra {
     @PrimaryGeneratedColumn("uuid")
-    idHoraExtra: string
+    id_hora_extra: number
 
-    @Column({ length: 70, nullable: false })
+    @Column({ nullable: false })
+    verba: number
+
+    @ManyToOne(() => Colaborador)
+    @JoinColumn({name: "id_colab"}) // passa a coluna que estará fazendo a refencia
+    colaborador: Colaborador; // horaExtra tem que estar ligada ao menos a um colaborador
+
+    @Column()
+    id_colab: string;
+
+    @Column({ length: 100, nullable: false })
     justificativa: string
 
-    @Column({ nullable: false })
-    inicio: string
+    @CreateDateColumn({ nullable: false }) // Coluna que aceita data
+    dia: Date
 
-    @Column({ nullable: false })
-    fim: string
+    @CreateDateColumn({ nullable: false })
+    inicio: Date
+
+    @CreateDateColumn({ nullable: false })
+    fim: Date
 
     @Column({ nullable: false })
     status: number
 
-    @ManyToOne((type) => Colaborador, { onDelete: 'CASCADE' })
-    @JoinColumn({  //Defines which side of the relation contains the join column with a foreign key 
-        name: "idcolab",
-        referencedColumnName: "id_colaborador",
-        foreignKeyConstraintName: "fk_colab_id"
-    })
-    colaborador: Colaborador
 
 }
