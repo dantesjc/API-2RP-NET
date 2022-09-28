@@ -14,37 +14,22 @@ const swaggerOptions = {
     },
     "basePath": "/",
     "paths": {
-        "/products/findByName" :{
+        "/usuario/getUserById": {
             "get": {
-                "tags": ["Products"],
+                "tags": ["Usuários"],
                 "parameters": {
                     "in": "query",
                     "name": "name",
-                    "type": "string" 
+                    "type": "string"
                 },
-                "responses": {
-                    
-                }
-            }
-        },
-
-        "/products" :{
-            "post": {
-                "tags": ["Products"],
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "name": {
+                                    "id": {
                                         "type": "string"
-                                    },
-                                    "description": {
-                                        "type": "string"
-                                    },
-                                    "price": {
-                                        "type": "number"
                                     }
                                 }
                             }
@@ -53,9 +38,106 @@ const swaggerOptions = {
                 },
                 "responses": {
                     "200": {
-                        "description": "Produto criado"
+                        "description": "Usuário encontrado"
                     }
-                    
+                }
+            }
+        },
+
+        "/usuario/getAllUsers": {
+            "get": {
+                "tags": ["Usuários"],
+                "responses": {
+                    "200": {
+                        "description": "Usuário encontrado"
+                    }
+                }
+            }
+        },
+
+        "/usuario/createUser": {
+            "post": {
+                "tags": ["Usuários"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "nome": {
+                                        "type": "string"
+                                    },
+                                    "senha": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Usuário criado"
+                    }
+
+                }
+            }
+        },
+        "/usuario/updateUser": {
+            "put": {
+                "tags": ["Usuários"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+
+                                    "nome": {
+                                        "type": "string"
+                                    },
+
+                                    "senha": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Usuário editado com sucesso"
+                    }
+
+                }
+            }
+        },
+        "/usuario/deleteUser": {
+            "delete": {
+                "tags": ["Usuários"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Usuário deletado com sucesso"
+                    }
+
                 }
             }
         },

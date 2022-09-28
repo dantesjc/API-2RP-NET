@@ -3,15 +3,24 @@ import { Request, Response } from 'express'
 import { Usuario } from '../entity/Usuario'
 
 class UsuarioController {
-  public async find(req: Request, res: Response): Promise<Response> {
-    const { nome, senha } = req.body
-    const usuario = await AppDataSource.manager.findOneBy(Usuario, { nome, senha })
+  // usuario/getUserById
+  public async findById(req: Request, res: Response): Promise<Response> {
+    const { id } = req.body
+    const usuario = await AppDataSource.manager.findOneBy(Usuario, { id })
     if (usuario)
       return res.json(usuario)
     return res.json({ error: "Dados inválidos" })
   }
 
+  // usuario/getAllUsers
+  public async getAll(req: Request, res: Response): Promise<Response> {
+    const usuarios = await AppDataSource.manager.find(Usuario)
+    if (usuarios)
+      return res.json(usuarios)
+    return res.json({ error: "Dados inválidos" })
+  }
 
+  // usuario/createUser
   public async create(req: Request, res: Response): Promise<Response> {
     const { nome, senha, create_at } = req.body
     const usuario = await AppDataSource.manager.save(Usuario, { nome, senha, create_at }).catch((e) => {
@@ -20,9 +29,9 @@ class UsuarioController {
 
     return res.json(usuario)
   }
-
+  // usuario/updateUser
   public async update(req: Request, res: Response): Promise<Response> {
-    const { id,nome, senha } = req.body
+    const { id, nome, senha } = req.body
     const usuario: any = await AppDataSource.manager.findOneBy(Usuario, { id }).catch((e) => {
       return { error: "Identificador inválido" }
     })
@@ -41,7 +50,7 @@ class UsuarioController {
       return res.json({ error: "Usuário não localizado" })
     }
   }
-
+  // usuario/deleteUser
   public async delete(req: Request, res: Response): Promise<Response> {
     const { id } = req.body
     const usuario: any = await AppDataSource.manager.findOneBy(Usuario, { id }).catch((e) => {

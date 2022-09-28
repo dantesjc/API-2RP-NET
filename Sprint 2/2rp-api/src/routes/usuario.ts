@@ -3,9 +3,10 @@ import UsuarioController from "../controllers/UsuarioController";
 
 const routes = Router();
 
-routes.get('/', UsuarioController.find)
-routes.post('/', UsuarioController.create)
-routes.put('/', UsuarioController.update)
-routes.delete('/', UsuarioController.delete)
+routes.get('/getUserById', UsuarioController.findById)
+routes.get('/getAllUsers', UsuarioController.getAll)
+routes.post('/createUser', UsuarioController.create)
+routes.put('/updateUser', UsuarioController.update)
+routes.delete('/deleteUser', UsuarioController.delete)
 
 export default routes
