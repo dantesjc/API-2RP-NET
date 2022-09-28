@@ -35,11 +35,6 @@ function Login() {
                     </div>
                     <div className='tpm'>
                         <button onClick={Function()}className='fundo offset-2 mt-5 input'><Link to='/dashboard'> Logar </Link></button>
-                        <script>
-                        function Function() {
-                        alert("Tente de novo!")
-                        }
-                        </script>
                     </div>
                 </div>    
             </div>
