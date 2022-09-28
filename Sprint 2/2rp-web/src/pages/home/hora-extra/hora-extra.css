@@ -1,0 +1,22 @@
+.fundoModal{
+    position: absolute;
+    background-color: rgb( 204 , 204 , 204 );
+}
+
+.textoModal{
+    position: absolute;
+    color: black;
+    text-align: center;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    font-size: 20px;
+    display: flex;
+}
+
+.botaoModal{
+    position: relative;
+    top: 70%;
+    left: 25%;
+    margin: 0 2%;
+}

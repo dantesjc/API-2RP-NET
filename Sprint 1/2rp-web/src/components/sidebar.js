@@ -27,7 +27,7 @@ function Sidebar({ children }) {
                                 <Link to='/login' className ='side-links mt-4' >
                                     Sair
                                 </Link>
-                        
+                                
                     </div>
                     <div className='footer'>
                         <img src={require('../assets/powertech.png')} height='140px' width='160px' />
