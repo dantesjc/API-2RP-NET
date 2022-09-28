@@ -5,7 +5,7 @@ import Login from './pages/login/login'
 import Dashboard from './pages/home/dashboard'
 import Sobreaviso from './pages/home/sobreaviso/sobreaviso'
 import HoraExtra from './pages/home/hora-extra/hora-extra'
-import Gestor from './pages/home/gestor/gestor'
+import Gestor from './pages/home/gestor/gestor';
 
 function App() {
   return (
