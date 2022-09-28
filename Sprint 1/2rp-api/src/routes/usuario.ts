@@ -1,14 +1,12 @@
 import { Router } from "express";
-import { CreateUsuarioController } from "./../controllers/CreateUsuarioController";
-import { DeleteUsuarioController } from "./../controllers/DeleteUsuarioController";
-import { GetAllUsuariosController } from "./../controllers/GetAllUsuariosController";
-import { UpdateUsuarioController } from "./../controllers/UpdateUsuarioController";
+import UsuarioController from "../controllers/UsuarioController";
 
 const routes = Router();
 
-routes.post("/usuarios", new CreateUsuarioController().handle);
-routes.get("/usuarios", new GetAllUsuariosController().handle);
-routes.delete("/usuarios/:id", new DeleteUsuarioController().handle);
-routes.put("/usuarios/:id", new UpdateUsuarioController().handle);
+routes.get('/', UsuarioController.find)
+// routes.get('/getAll', UsuarioController.getAll)
+routes.post('/', UsuarioController.create)
+routes.put('/', UsuarioController.update)
+routes.delete('/', UsuarioController.delete)
 
-export {routes}
+export default routes

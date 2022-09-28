@@ -5,17 +5,18 @@ import { Usuario } from '../entity/Usuario'
 class UsuarioController {
   public async find(req: Request, res: Response): Promise<Response> {
     const { mail, senha } = req.body
-    const usuario = await AppDataSource.manager.findOneBy(Usuario, { mail, senha })
+    const usuario = await AppDataSource.manager.findOneBy(Usuario, { senha })
     if (usuario)
       return res.json(usuario)
     return res.json({ error: "Dados inválidos" })
   }
+  
 
   public async create(req: Request, res: Response): Promise<Response> {
-    const { mail, senha } = req.body
-    const usuario = await AppDataSource.manager.save(Usuario, { mail, senha }).catch((e) => {
-      // testa se o e-mail é repetido
-      if (/(mail)[\s\S]+(already exists)/.test(e.detail)) {
+    const { nome, senha, create_at } = req.body
+    const usuario = await AppDataSource.manager.save(Usuario, { nome, senha, create_at }).catch((e) => {
+      // testa se o e-nome é repetido
+      if (/(nome)[\s\S]+(already exists)/.test(e.detail)) {
         return { error: 'e-mail já existe' }
       }
       return e

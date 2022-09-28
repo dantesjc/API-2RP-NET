@@ -1,10 +1,10 @@
-import {Entity, Column, CreateDateColumn, PrimaryColumn} from "typeorm";
+import {Entity, Column, CreateDateColumn, PrimaryColumn, PrimaryGeneratedColumn} from "typeorm";
 import { v4 as uuid } from "uuid"
 
 @Entity("usuarios")
 export class Usuario{
 
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn("uuid")
     id: string;  
     
     @Column()
@@ -15,10 +15,6 @@ export class Usuario{
 
     @CreateDateColumn()
     create_at: Date;
+    default: () => 'NOW()' // hora atual
 
-    constructor(){
-        if(!this.id){
-            this.id = uuid();
-        }
-    }
 }

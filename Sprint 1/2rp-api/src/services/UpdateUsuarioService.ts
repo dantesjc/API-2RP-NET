@@ -1,5 +1,5 @@
 import { getRepository } from "typeorm";
-import { Usuario } from "../entities/Usuario";
+import { Usuario } from "../entity/Usuario";
 
 type UsuarioUpdateRequest = {
     id: string;
@@ -11,7 +11,7 @@ export class UpdateUsuarioService{
     async execute({id, nome, senha}: UsuarioUpdateRequest) {
         const repo = getRepository(Usuario);
 
-        const usuario = await repo.findOne(id);
+        const usuario = await repo.findOneBy({id});
 
         if (!usuario){
             return new Error("Usuario não existe");
