@@ -21,6 +21,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+import Modal from 'react-modal';
     
 
 import './hora-extra.css'
@@ -106,6 +107,25 @@ function HoraExtra() {
         setFormData();
     }
 
+    const [modalIsOpen, setIsOpen] = useState(false)
+
+    function handleOpenModal(){
+        setIsOpen(true)
+    }
+
+    function handleCloseModal(){
+        setIsOpen(false)
+    }
+
+    const customStyles = {
+        content: {
+            height: '30%',
+            width: '35%',
+            top: '35%',
+            left: '40%',
+            
+        }
+    }
 
     return (
         <Sidebar>
@@ -180,8 +200,21 @@ function HoraExtra() {
                     <div className="col-3 mt-3">
                         <Button variant="success"
                             disabled={value.code == ''}
-                            onClick={() => submit()
+                            onClick={handleOpenModal
                             }>Confirmar</Button>
+                        <Modal
+                            isOpen={modalIsOpen}
+                            onRequestClose={handleCloseModal}
+                            style={customStyles}
+                            className="fundoModal"
+                        >
+                                <div className="textoModal">
+                                    Deseja confirmar horário XX:XX XX até as XX:XX XX no dia XX/XX/XXXX
+                                </div>
+                                <Button variant="success" className="botaoModal md-3" onClick={() => submit()
+                                }> Confirmar </Button>
+                                <Button variant="danger" className="botaoModal md-3" onClick={handleCloseModal}> Cancelar </Button>
+                        </Modal>
                     </div>
                 </div>
 
