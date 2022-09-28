@@ -4,21 +4,17 @@ import { Usuario } from '../entity/Usuario'
 
 class UsuarioController {
   public async find(req: Request, res: Response): Promise<Response> {
-    const { mail, senha } = req.body
-    const usuario = await AppDataSource.manager.findOneBy(Usuario, { senha })
+    const { nome, senha } = req.body
+    const usuario = await AppDataSource.manager.findOneBy(Usuario, { nome, senha })
     if (usuario)
       return res.json(usuario)
     return res.json({ error: "Dados inválidos" })
   }
-  
+
 
   public async create(req: Request, res: Response): Promise<Response> {
     const { nome, senha, create_at } = req.body
     const usuario = await AppDataSource.manager.save(Usuario, { nome, senha, create_at }).catch((e) => {
-      // testa se o e-nome é repetido
-      if (/(nome)[\s\S]+(already exists)/.test(e.detail)) {
-        return { error: 'e-mail já existe' }
-      }
       return e
     })
 
@@ -26,18 +22,14 @@ class UsuarioController {
   }
 
   public async update(req: Request, res: Response): Promise<Response> {
-    const { id, mail, senha } = req.body
+    const { id,nome, senha } = req.body
     const usuario: any = await AppDataSource.manager.findOneBy(Usuario, { id }).catch((e) => {
       return { error: "Identificador inválido" }
     })
     if (usuario && usuario.id) {
-      usuario.mail = mail
+      usuario.nome = nome
       usuario.senha = senha
       const r = await AppDataSource.manager.save(Usuario, usuario).catch((e) => {
-        // testa se o e-mail é repetido
-        if (/(mail)[\s\S]+(already exists)/.test(e.detail)) {
-          return ({ error: 'e-mail já existe' })
-        }
         return e
       })
       return res.json(r)
