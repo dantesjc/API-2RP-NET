@@ -1,3 +1,4 @@
+
 import Sidebar from "../../../components/sidebar"
 import Header from "../../../components/header/header";
 import './gestor.css'
@@ -36,7 +37,7 @@ function Gestor() {
 
             {/* card info hora extra */}
             <div className="border">
-              <label className="ml-4">Funcionário:</label>
+              <label>Funcionário:</label>
               <div>
               <span className="d-flex justify-content-evenly">
                 <div className="border d-flex flex-column align-items-center">Data <div>07/07/07</div></div> 

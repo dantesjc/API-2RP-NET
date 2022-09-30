@@ -1,9 +1,28 @@
+
 import Sidebar from "../../../components/sidebar"
-import Header from "../../../components/header/header";
 import './gestor.css'
 
-import React, { Component, useEffect, useState } from 'react';
 
+
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+
+import React, { Component, useEffect, useState } from 'react';
+import dayjs from 'dayjs';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+
+import Header from "../../../components/header/header";
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import Stack from '@mui/material/Stack';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import InputLabel from '@mui/material/InputLabel';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 
 class MyLabel extends Component {
@@ -13,7 +32,6 @@ class MyLabel extends Component {
     }
   }
 }
-
 
 
 function Gestor() {
@@ -34,9 +52,8 @@ function Gestor() {
             <label>Filtro</label> <input className=""></input>
             </span>
 
-            {/* card info hora extra */}
             <div className="border">
-              <label className="ml-4">Funcionário:</label>
+              <label>Funcionário:</label>
               <div>
               <span className="d-flex justify-content-evenly">
                 <div className="border d-flex flex-column align-items-center">Data <div>07/07/07</div></div> 
@@ -45,9 +62,11 @@ function Gestor() {
                 
                 <div className="border d-flex flex-column align-items-center">Hora final <div>18:11</div></div> 
                 
-                <div className="border d-flex flex-column align-items-center">Ações <div><button type="button" class="btn btn-success">Aceitar</button> <button type="button" class="btn btn-danger">Recusar</button></div></div>
+                <div className="border d-flex flex-column align-items-center">Ações <div><Button variant="success">Aceitar</button> <button>Recusar</button></div></div>
               </span>
-              </div>              
+
+              </div>
+              
             </div>
 
             </div>
