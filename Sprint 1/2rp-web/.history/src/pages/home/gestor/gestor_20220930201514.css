@@ -1,13 +1,10 @@
 .background{
     margin-top: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
-    border-radius: 15px;
-
-    background-color: #080622;
+    background-color: aqua;
 }
 
 .filtro{
+    margin-top: 5px;
     width: 20%;
 }
 
@@ -17,8 +14,4 @@
 
 .filtroLabel{
     margin-left: 37%;
-}
-
-.font{
-    color: white;
 }
