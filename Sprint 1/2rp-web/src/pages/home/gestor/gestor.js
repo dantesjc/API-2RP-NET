@@ -1,5 +1,6 @@
 import Sidebar from "../../../components/sidebar"
 import Header from "../../../components/header/header";
+import Card from "../../../components/cards/Cards"
 import './gestor.css'
 
 import React, { Component, useEffect, useState } from 'react';
@@ -24,31 +25,39 @@ function Gestor() {
           {/* linha 1 */}
           <div className="background d-flex flex-column aling-itens-center">
             
-            <div className="">
+            <div>
             <span className="soli">
-            <label>Solicitações hora extra</label> 
-            
-
+            <label className="font">Solicitações hora extra</label> 
             </span>
+
             <span className="filtroLabel">
-            <label>Filtro</label> <input className=""></input>
+            <label className="font">Filtro</label> <input className="mt-4 mb-4 ml-2"></input>
             </span>
 
             {/* card info hora extra */}
-            <div className="border">
-              <label className="ml-4">Funcionário:</label>
-              <div>
-              <span className="d-flex justify-content-evenly">
-                <div className="border d-flex flex-column align-items-center">Data <div>07/07/07</div></div> 
-                
-                <div className="border d-flex flex-column align-items-center">Hora inicial <div>6:11</div></div> 
-                
-                <div className="border d-flex flex-column align-items-center">Hora final <div>18:11</div></div> 
-                
-                <div className="border d-flex flex-column align-items-center">Ações <div><button type="button" class="btn btn-success">Aceitar</button> <button type="button" class="btn btn-danger">Recusar</button></div></div>
-              </span>
-              </div>              
+            <div className="d-flex flex-column aling-itens-center">
+            <Card 
+              Funcionario = "Carlos Blaster"
+              Data = "25/10/11"
+              HoraInicial = "11:00"
+              HoraFinal = "17:00"
+            />
+
+            <Card 
+              Funcionario = "Carlos Magno"
+              Data = "26/10/11"
+              HoraInicial = "12:00"
+              HoraFinal = "18:00"
+            />
+
+            <Card 
+              Funcionario = "Carlos Magno"
+              Data = "26/10/11"
+              HoraInicial = "12:00"
+              HoraFinal = "18:00"
+            />
             </div>
+            
 
             </div>
               
