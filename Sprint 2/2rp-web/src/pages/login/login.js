@@ -34,9 +34,9 @@ function Login() {
                         </div>
                     </div>
                     <div className='tpm'>
-                    <Link to='/dashboard'>
-                        <button onClick={Function()}className='fundo offset-2 mt-5 input'> Logar </button>
-                    </Link>
+                        <Link to='/dashboard'>
+                            <button onClick={Function()}className='fundo offset-2 mt-5 input'> Logar </button>
+                        </Link>
                     </div>
                 </div>    
             </div>

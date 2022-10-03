@@ -117,12 +117,6 @@ function HoraExtra() {
         setIsOpen(false)
     }
 
-    function onClickClose(){
-        openSnack('Hora extra cadastrada com sucesso', 'success')
-        setFormData()
-        setIsOpen(false)
-    }
-
     const customStyles = {
         content: {
             height: '30%',
@@ -217,7 +211,8 @@ function HoraExtra() {
                                 <div className="textoModal">
                                     Deseja confirmar horário XX:XX XX até as XX:XX XX no dia XX/XX/XXXX
                                 </div>
-                                <Button variant="success" className="botaoModal md-3" onClick={onClickClose}> Confirmar </Button>
+                                <Button variant="success" className="botaoModal md-3" onClick={() => submit()
+                                }> Confirmar </Button>
                                 <Button variant="danger" className="botaoModal md-3" onClick={handleCloseModal}> Cancelar </Button>
                         </Modal>
                     </div>
