@@ -5,8 +5,8 @@ export class GetAllSobreavisosService{
     async execute() {
         const repo = getRepository(Sobreaviso);
 
-        const usuarios = await repo.find();
+        const sobreaviso = await repo.find();
 
-        return usuarios;
+        return sobreaviso;
     }
 }
