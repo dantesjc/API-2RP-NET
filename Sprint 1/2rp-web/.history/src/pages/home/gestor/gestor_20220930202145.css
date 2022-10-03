@@ -1,0 +1,19 @@
+.background{
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-radius: 5px;
+    background-color: aqua;
+}
+
+.filtro{
+    width: 20%;
+}
+
+.soli{
+    margin-left: 15%;
+}
+
+.filtroLabel{
+    margin-left: 37%;
+}

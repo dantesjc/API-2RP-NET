@@ -25,7 +25,7 @@ function Gestor() {
           {/* linha 1 */}
           <div className="background d-flex flex-column aling-itens-center">
             
-            <div>
+            <div className="border">
             <span className="soli">
             <label className="font">Solicitações hora extra</label> 
             </span>
@@ -41,13 +41,6 @@ function Gestor() {
               Data = "25/10/11"
               HoraInicial = "11:00"
               HoraFinal = "17:00"
-            />
-
-            <Card 
-              Funcionario = "Carlos Magno"
-              Data = "26/10/11"
-              HoraInicial = "12:00"
-              HoraFinal = "18:00"
             />
 
             <Card 

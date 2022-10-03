@@ -50,7 +50,7 @@ function Gestor() {
               HoraFinal = "18:00"
             />
 
-            <Card 
+<Card 
               Funcionario = "Carlos Magno"
               Data = "26/10/11"
               HoraInicial = "12:00"
