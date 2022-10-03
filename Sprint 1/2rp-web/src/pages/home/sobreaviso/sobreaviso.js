@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
@@ -24,13 +24,10 @@ import MuiAlert from '@mui/material/Alert';
 
 
 import './sobreaviso.css'
-import { createBreakpoints } from "@mui/system";
+// import { createBreakpoints } from "@mui/system";
 
 function Sobreaviso() {
-    const [value, setValue] = useState({
-        code: '3016',
-        status: 'Pendente'
-    });
+
     const [selectedDate, setDate] = useState(dayjs(new Date()))
     const [selectedStart, setStart] = useState(dayjs(new Date()))
     const [selectedEnd, setEnd] = useState(dayjs(new Date()))
@@ -38,12 +35,6 @@ function Sobreaviso() {
     const [textSnack, setTextSnack] = React.useState('');
     const [colorSnack, setColorSnack] = React.useState('');
 
-    const handleChange = (value) => {
-        setValue(prevValue => ({
-            ...prevValue,
-            [value.target.name]: value.target.value,
-        }));
-    };
 
     const Alert = React.forwardRef(function Alert(props, ref) {
         return <MuiAlert elevation={10} ref={ref} variant="filled" {...props} />;
@@ -65,7 +56,6 @@ function Sobreaviso() {
     };
 
     const [form, setForm] = useState({
-        code: '',
         data: '',
         start: '',
         end: '',
@@ -76,7 +66,6 @@ function Sobreaviso() {
 
     const setFormData = () => {
         setForm({
-            code: value.code,
             data: selectedDate.$d.getDate() + "/" + (selectedDate.$d.getMonth() + 1) + "/" + selectedDate.$d.getFullYear(),
             start: selectedStart.$d.getHours() + ':' + selectedStart.$d.getMinutes(),
             end: selectedEnd.$d.getHours() + ':' + selectedEnd.$d.getMinutes(),
@@ -87,7 +76,6 @@ function Sobreaviso() {
 
     const deleteForm = () => {
         setForm({
-            code: '',
             data: '',
             start: '',
             end: '',
@@ -110,24 +98,6 @@ function Sobreaviso() {
             {/* linha 1 data, inicio, fim */}
             <div className="d-flex flex-column align-items-center">
                 <div className="row justify-content-center align-items-center col-md-10 mt-4">
-
-                    <div className="col-md-2 col-sm-10 mt-3">
-                        <Box sx={{ minWidth: 120 }}>
-                            <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">Verba</InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    label="Código verba"
-                                    name="code"
-                                    readonly disabled
-                                    value={value.code}
-                                    onChange={handleChange}>
-                                    <MenuItem value={3016}>3016</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </Box>
-                    </div>
 
                     <div className="col-md-2 col-sm-10 mt-3">
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -175,7 +145,6 @@ function Sobreaviso() {
 
                     <div className="col-3 mt-3">
                         <Button variant="success"
-                            disabled={value.code == ''}
                             onClick={() => submit()
                             }>Confirmar</Button>
                     </div>
@@ -188,7 +157,6 @@ function Sobreaviso() {
                     <Table striped bordered hover responsive >
                         <thead >
                             <tr>
-                                <th className="col-md-2 ">Código Verba</th>
                                 <th className="col-md-2">Data</th>
                                 <th className="col-md-2">Hora Início</th>
                                 <th className="col-md-2">Hora fim</th>
@@ -198,7 +166,6 @@ function Sobreaviso() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{form.code}</td>
                                 <td>{form.data}</td>
                                 <td>{form.start}</td>
                                 <td>{form.end}</td>

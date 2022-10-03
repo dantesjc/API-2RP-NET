@@ -5,6 +5,7 @@ import Login from './pages/login/login'
 import Dashboard from './pages/home/dashboard'
 import Sobreaviso from './pages/home/sobreaviso/sobreaviso'
 import HoraExtra from './pages/home/hora-extra/hora-extra'
+import Gestor from './pages/home/gestor/gestor'
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Route path='/dashboard' element={<Dashboard />} />
       <Route path='/horaextra' element={<HoraExtra />} />
       <Route path='/sobreaviso' element={<Sobreaviso />} />
+      <Route path='/gestor' element={<Gestor />} />
+
     </Routes>
 
   );

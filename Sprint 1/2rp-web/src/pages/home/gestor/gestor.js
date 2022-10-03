@@ -2,6 +2,7 @@ import Sidebar from "../../../components/sidebar"
 import Header from "../../../components/header/header";
 import Card from "../../../components/cards/Cards"
 import './gestor.css'
+import gestor from "../gestor/gestor"
 
 import React, { Component, useEffect, useState } from 'react';
 
@@ -35,7 +36,7 @@ function Gestor() {
             </span>
 
             {/* card info hora extra */}
-            <div className="d-flex flex-column aling-itens-center">
+            <div className="row justify-content-center col-md-10 offset-md-1">
             <Card 
               Funcionario = "Carlos Blaster"
               Data = "25/10/11"
