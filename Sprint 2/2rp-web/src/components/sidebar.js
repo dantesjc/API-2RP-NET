@@ -24,6 +24,22 @@ function Sidebar({ children }) {
                                 <Link to='/sobreaviso' className ='side-links mt-4' >
                                     Apontar Sobreaviso
                                 </Link>
+
+
+                                <Link to='/dashboardgestor' className ='side-links mt-4' >
+                                    Dashboard
+                                </Link>
+                                <Link to='/horaextragestor' className ='side-links mt-4' >
+                                        Aprovar Hora Extra
+                                </Link>
+                                <Link to='/sobreavisogestor' className ='side-links mt-4' >
+                                    Aprovar Sobreaviso
+                                </Link>    
+                                <Link to='/historicogestor' className ='side-links mt-4' >
+                                    Histórico
+                                </Link>
+
+
                                 <Link to='/login' className ='side-links mt-4' >
                                     Sair
                                 </Link>

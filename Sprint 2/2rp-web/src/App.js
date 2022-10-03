@@ -15,7 +15,10 @@ function App() {
       <Route path='/horaextra' element={<HoraExtra />} />
       <Route path='/sobreaviso' element={<Sobreaviso />} />
       <Route path='/gestor' element={<Gestor />} />
-
+      <Route path='/horaextragestor' element={<Gestor />} />
+      <Route path='/sobreavisogestor' element={<Gestor />} />
+      <Route path='/historicogestor' element={<Gestor />} />
+      <Route path='/dashboardgestor' element={<Gestor />} />
     </Routes>
 
   );
