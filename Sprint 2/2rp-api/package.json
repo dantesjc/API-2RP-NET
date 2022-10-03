@@ -1,37 +1,23 @@
 {
-  "name": "servidor",
+  "name": "back",
   "version": "1.0.0",
-  "description": "- Neste exemplo os dados das tabelas são persistidos no SGBD PostgreSQL da nuvem ElephantSQL.\r - A URL de acesso ao banco na ElephantSQL está no arquivo `.env`.\r - Os parâmetros de conexão com o SGBD estão no arquivo `src/app-data-source.ts`.\r - As entidades estão na pasta `src/entity`. As entidades `usuario` e `gasto` serão persistidas como tabelas do SGBD. Existe um relacionamento 1:n, um usuário pode ter vários gastos.\r - A hirarquia de rotas está definida na pasta `src/routes`.\r - A inicialização do servidor está no arquivo `src/index.ts` e para rodar a aplicação, em modo de desenvolvimento, usa-se o comando `npm run dev` e, em modo de produção, `npm run start`. Esses comandos foram definidos no arquivo de `package.json` da aplicação: \r ```\r \"scripts\": {\r    \"dev\": \"ts-node-dev src/index.ts\",\r    \"start\": \"ts-node src/index.ts\"\r }\r ```",
-  "main": "index.ts",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev src/index.ts",
-    "start": "ts-node src/index.ts"
+    "dev": "ts-node-dev --transpile-only src/server.ts",
+    "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "pg": "^8.8.0",
-    "swagger-jsdoc": "^6.2.5",
-    "swagger-ui-express": "^4.5.0",
-    "typeorm": "^0.3.9"
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "0.2.36",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.13",
-    "ts-node": "^10.9.1",
+    "@types/express": "^4.17.14",
+    "@types/uuid": "^8.3.4",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^4.7.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arleysouza/typeorm.git"
-  },
-  "bugs": {
-    "url": "https://github.com/arleysouza/typeorm/issues"
-  },
-  "homepage": "https://github.com/arleysouza/typeorm#readme"
+    "typescript": "^4.8.3"
+  }
 }
