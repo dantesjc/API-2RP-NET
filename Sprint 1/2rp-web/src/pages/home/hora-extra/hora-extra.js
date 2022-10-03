@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
@@ -199,7 +199,7 @@ function HoraExtra() {
 
                     <div className="col-3 mt-3">
                         <Button variant="success"
-                            disabled={value.code == ''}
+                            disabled={value.code === ''}
                             onClick={handleOpenModal
                             }>Confirmar</Button>
                         <Modal

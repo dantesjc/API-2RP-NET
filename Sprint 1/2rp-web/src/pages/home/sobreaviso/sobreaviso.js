@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
@@ -24,7 +24,7 @@ import MuiAlert from '@mui/material/Alert';
 
 
 import './sobreaviso.css'
-import { createBreakpoints } from "@mui/system";
+// import { createBreakpoints } from "@mui/system";
 
 function Sobreaviso() {
     const [value, setValue] = useState({
@@ -175,7 +175,7 @@ function Sobreaviso() {
 
                     <div className="col-3 mt-3">
                         <Button variant="success"
-                            disabled={value.code == ''}
+                            disabled={value.code === ''}
                             onClick={() => submit()
                             }>Confirmar</Button>
                     </div>
