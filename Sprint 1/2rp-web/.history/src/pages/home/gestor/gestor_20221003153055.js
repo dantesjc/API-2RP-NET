@@ -6,23 +6,12 @@ import './gestor.css'
 import React, { Component, useEffect, useState } from 'react';
 
 
-
-class MyLabel extends Component {
-  render() {
-    return {
-      
-    }
-  }
-}
-
-
-
 function Gestor() {
     return (
         <Sidebar>
           <Header nome="Horas Extras"></Header>
 
-          {/* linha 1 */}
+          {/* linha 1: solitações, filtro */}
           <div className="background d-flex flex-column aling-itens-center">
             
             <div>
@@ -51,7 +40,7 @@ function Gestor() {
             />
 
             <Card 
-              Funcionario = "Carlos Magno"
+              Funcionario = "Is Me is Me Diego Brance"
               Data = "26/10/11"
               HoraInicial = "12:00"
               HoraFinal = "18:00"
