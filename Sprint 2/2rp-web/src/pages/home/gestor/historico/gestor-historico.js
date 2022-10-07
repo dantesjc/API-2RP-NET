@@ -26,7 +26,7 @@ function GestorHistorico() {
             {/* card info historico */}
             <div className="d-flex flex-column aling-itens-center">
             <Historico 
-              Funcionario = "Carlos Blaster"
+              Funcionario = " Silhana Manavento"
               Data = "25/10/11"
               HoraInicial = "11:00"
               HoraFinal = "17:00"
@@ -34,7 +34,7 @@ function GestorHistorico() {
             />
 
             <Historico 
-              Funcionario = "Carlos Magno"
+              Funcionario = " Magno Antonio"
               Data = "26/10/11"
               HoraInicial = "12:00"
               HoraFinal = "18:00"
@@ -42,7 +42,7 @@ function GestorHistorico() {
             />
 
             <Historico 
-              Funcionario = "Is me is me Diego Brance"
+              Funcionario = "Felipe Silva"
               Data = "26/10/11"
               HoraInicial = "12:00"
               HoraFinal = "18:00"

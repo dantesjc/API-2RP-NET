@@ -8,6 +8,9 @@ import React from 'react'
 function Sidebar({ children }) {
     const theme = useTheme();
 
+
+
+
     return (
         <>
 
@@ -15,7 +18,7 @@ function Sidebar({ children }) {
                 <Box width={theme.spacing(28)} height={theme.spacing(100)} className ='side-bar  '>
                      <div className='texto mt-5'>
                         
-                                <Link to='/dashboard' className ='side-links mt-4'>
+                                {/* <Link to='/dashboard' className ='side-links mt-4'>
                                     Dashboard
                                 </Link>
                                 <Link to='/horaextra' className ='side-links mt-4'>
@@ -23,19 +26,19 @@ function Sidebar({ children }) {
                                 </Link>
                                 <Link to='/sobreaviso' className ='side-links mt-4' >
                                     Apontar Sobreaviso
-                                </Link>
+                                </Link> */}
 
-
-                                <Link to='/dashboardgestor' className ='side-links mt-4' >
+                                {/* Associar a lista de link */}
+                                {/* <Link to='/gestor-dashboard' className ='side-links mt-4' >
                                     Dashboard
-                                </Link>
-                                <Link to='/horaextragestor' className ='side-links mt-4' >
+                                </Link> */}
+                                <Link to='/gestor' className ='side-links mt-4' >
                                         Aprovar Hora Extra
                                 </Link>
-                                <Link to='/sobreavisogestor' className ='side-links mt-4' >
+                                <Link to='/gestor-sobreaviso' className ='side-links mt-4' >
                                     Aprovar Sobreaviso
                                 </Link>    
-                                <Link to='/historicogestor' className ='side-links mt-4' >
+                                <Link to='/gestor-historico' className ='side-links mt-4' >
                                     Histórico
                                 </Link>
 

@@ -26,21 +26,21 @@ function GestorSobreaviso() {
             {/* card info hora extra */}
             <div className="d-flex flex-column aling-itens-center">
             <Card 
-              Funcionario = "Carlos Blaster"
+              Funcionario = " Silhana Manavento"
               Data = "25/10/11"
               HoraInicial = "11:00"
               HoraFinal = "17:00"
             />
 
             <Card 
-              Funcionario = "Carlos Magno"
+              Funcionario = " Magno Antonio"
               Data = "26/10/11"
               HoraInicial = "12:00"
               HoraFinal = "18:00"
             />
 
             <Card 
-              Funcionario = "Is me is me Diego Brance"
+              Funcionario = "Felipe Silva"
               Data = "26/10/11"
               HoraInicial = "12:00"
               HoraFinal = "18:00"
