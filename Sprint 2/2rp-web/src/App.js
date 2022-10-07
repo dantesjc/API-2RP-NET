@@ -5,7 +5,9 @@ import Login from './pages/login/login'
 import Dashboard from './pages/home/dashboard'
 import Sobreaviso from './pages/home/sobreaviso/sobreaviso'
 import HoraExtra from './pages/home/hora-extra/hora-extra'
-import Gestor from './pages/home/gestor/gestor'
+import Gestor from './pages/home/gestor/aprovar-hora-extra/gestor'
+import GestorSobreaviso from './pages/home/gestor/aprovar-sobreaviso/gestor-sobreaviso'
+import GestorHistorico from './pages/home/gestor/historico/gestor-historico'
 
 function App() {
   return (
@@ -15,10 +17,8 @@ function App() {
       <Route path='/horaextra' element={<HoraExtra />} />
       <Route path='/sobreaviso' element={<Sobreaviso />} />
       <Route path='/gestor' element={<Gestor />} />
-      <Route path='/horaextragestor' element={<Gestor />} />
-      <Route path='/sobreavisogestor' element={<Gestor />} />
-      <Route path='/historicogestor' element={<Gestor />} />
-      <Route path='/dashboardgestor' element={<Gestor />} />
+      <Route path='/gestor-sobreaviso' element={<GestorSobreaviso />} />
+      <Route path='/gestor-historico' element={<GestorHistorico />} />
     </Routes>
 
   );

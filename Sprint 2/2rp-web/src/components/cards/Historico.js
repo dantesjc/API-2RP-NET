@@ -19,7 +19,7 @@ function Card(props) {
                 
                 <div className="d-flex flex-column align-items-center"><b>Hora final</b><div>{props.HoraFinal}</div></div> 
                 
-                <div className="d-flex flex-column align-items-center mb-3"><b>Ações</b><div><button type="button" class="btn btn-success mt-1">Aceitar</button> <button type="button" class="btn btn-danger mt-1">Recusar</button></div></div>
+                <div className="d-flex flex-column align-items-center mb-3"><b>Status</b><div>{props.Status}</div></div> 
               </span>
               </div>            
             </div>

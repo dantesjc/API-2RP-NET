@@ -3,7 +3,7 @@ import './Cards.css'
 
 function Card(props) {
     return(
-        <div className="card-container mb-3 col-10 offset-1">
+        <div className="card-container mb-3">
             <div className="card-content">
 
             <div className="card-title ml-2 mt-2">

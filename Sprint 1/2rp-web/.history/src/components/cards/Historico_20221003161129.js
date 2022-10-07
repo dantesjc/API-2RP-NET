@@ -3,7 +3,7 @@ import './Cards.css'
 
 function Card(props) {
     return(
-        <div className="card-container mb-3 col-10 offset-1">
+        <div className="card-container mb-3">
             <div className="card-content">
 
             <div className="card-title ml-2 mt-2">
@@ -19,7 +19,7 @@ function Card(props) {
                 
                 <div className="d-flex flex-column align-items-center"><b>Hora final</b><div>{props.HoraFinal}</div></div> 
                 
-                <div className="d-flex flex-column align-items-center mb-3"><b>Ações</b><div><button type="button" class="btn btn-success mt-1">Aceitar</button> <button type="button" class="btn btn-danger mt-1">Recusar</button></div></div>
+                <div className="d-flex flex-column align-items-center mb-3"><b>Status</b><div>{props.Status}</div></div> 
               </span>
               </div>            
             </div>
