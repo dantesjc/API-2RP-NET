@@ -19,6 +19,7 @@ function App() {
       <Route path='/gestor' element={<Gestor />} />
       <Route path='/gestor-sobreaviso' element={<GestorSobreaviso />} />
       <Route path='/gestor-historico' element={<GestorHistorico />} />
+      <Route path='*' element={<Login />} />
     </Routes>
 
   );
