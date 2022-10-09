@@ -49,7 +49,7 @@
 <div align="center">
 <img src="https://cdn.discordapp.com/attachments/982353318422675476/1020717590626189412/unknown.png" width="500px" />
 </div>
-A 2RP NET é uma empresa de dados e solusões tecnologicas, seus colaboradores presisam apontar suas horas extras e sobreavisos seguindo certas regras e seus gestores precisam aprova-las.
+A 2RP NET é uma empresa de dados e soluções tecnológicas, seus colaboradores presisam apontar suas horas extras e sobreavisos seguindo certas regras e seus gestores precisam aprova-las.
 <br/>
 O desafio é fazer um Sistema que faça o controle da jornada de trabalho do colaborador, identifique e classifique horas extras,
 controle das horas extras e sobreavisos, integração para consumo de dados dos colaboradores com o
@@ -85,24 +85,24 @@ lançamento) e colaborador (apontar horas extras).
 
 
 ### :flags: Backlog do Produto
-
-| Tarefas                                                        | Sprint | Importância |
-|----------------------------------------------------------------|--------|-------------|
-| Tela de login.                                                 | 1      | Media       |
-| Tela do colaborador para apontar hora extra/sobreavisos.       | 1      | Muito Alta  |
-| Tela do colaborador lhe listando as horas extras/sobreavisos.  | 1      | Alta        |
-| Tela do colaborador para editar horas extras/sobreavisos.      | 1      | Muito Alta  |
-| Integração de dados com o sistema 2RP.                         | 2      | Alta        |
-| Tela do gestor para aprovação de horas extras/sobreavisos.     | 2      | Alta        |
-| Tela do gestor listando horas extras/sobreavisos.              | 2      | Muito Alta  |
-| Tela do administrador para definir os tipos de usuários.       | 3      | Media       |
-| Tela do administrador para definir as regras das taxas.        | 3      | Alta        |
-| Tela do administrador para o cadastro de clientes e/ou squads. | 3      | Media       |
-| Gerador de arquivos com os dados das horas extras/sobreavisos. | 3      | Media       |
-| Ingestão de dados dos colaboradores pelo administrador.        | 3      | Alta        |
-| Tela com dashboard individual.                                 | 4      | Muito Alta  |
-| Tela com dashboard geral.                                      | 4      | Muito Alta  |
-
+| Sprint |         Quem?        |                            User Story                           |                                            Por quê?                                           | Importância |
+|:------:|:--------------------:|:---------------------------------------------------------------:|:---------------------------------------------------------------------------------------------:|:-----------:|
+|    1   |      Colaborador     |   Desejo apontar horário das minhas pretensões de horas extras  |                  Para que meu gestor possa verificar e validar a solicitação                  |  Muito Alta |
+|    1   |      Colaborador     |   Desejo apontar horário das minhas pretensões dos sobreavisos  |                  Para que meu gestor possa verificar e validar a solicitação                  |  Muito Alta |
+|    1   |      Colaborador     |             Desejo consultar minhas horas apontadas             |                  Para que meu gestor possa verificar e validar a solicitação                  |  Muito Alta |
+|    1   |      Colaborador     |               Desejo editar minhas horas apontadas              |                  Para que em caso de erros, possa ser corrigido a solicitação                 |     Alta    |
+|    2   |    Todos usuários    | Desejo realizar login no sistema integrado com o sistema da 2RP | Para salvar meus registros com as mesmas informações que nos outros sistemas da mesma empresa |    Media    |
+|    2   |        Gestor        | Desejo permitir/recusar apontamentos feitos pelos colaboradores |                          Para que o colaborador saiba de seu horário                          |  Muito Alta |
+|    2   |        Gestor        |        Desejo consultar informações de todos apontamentos       |              Para poder consultar todos apontamentos, sendo eles pendentes ou não             |  Muito Alta |
+|    2   |        Gestor        |                Filtrar consultas dos apontamentos               |       Para poder visualizar de uma forma melhor e mais rápida os apontamentos desejados       |    Media    |
+|    2   |        Gestor        |         Desejo realizar apontamentos de outros usuários         |    Para que os colaboradores tenham conhecimento da hora que irão realizar suas atividades    |  Muito Alta |
+|    3   |     Administrador    |                Desejo definir o tipo dos usuários               |                 Para que eles possam ter o respectivo controle de suas funções                |     Alta    |
+|    3   |     Administrador    |          Desejo definir os valores das horas adicionais         |                 Para poder ter controle sobre os valores de cada tipo de hora                 |  Muito Alta |
+|    3   |     Administrador    |        Desejo realizar o cadastro de clientes e/ou squads       |                     Para poder agrupar os colabores e os organizar melhor                     |     Alta    |
+|    3   |     Administrador    |                   Desejo extrair horas extras                   |                         Para exportar as informações em outro arquivo                         |     Alta    |
+|    3   |     Administrador    |                Desejo ingerir dados dos colabores               |                                Para integrar com o sistema ADP                                |    Media    |
+|    4   | Colaborador e Gestor |                  Desejo um dashboard individual                 |                            Visualizar dados de formas mais simples                            |     Alta    |
+|    4   |     Administrador    |                    Desejo um dashboard geral                    |              Visualizar dados de formas mais simples em relação a um escopo maior             |     Alta    |
 
 
 ## :hourglass_flowing_sand: Planejamento de Entregas
@@ -111,11 +111,11 @@ lançamento) e colaborador (apontar horas extras).
 
 - [x] [SPRINT 1](https://github.com/PowerTech-Fatec/API-2RP-NET/tree/master/Sprint%201) - 29/08/2022 a 18/09/2022
 
-- [x] [SPRINT 2] - 19/09/2022 a 09/10/2022
+- [x] [SPRINT 2](https://github.com/PowerTech-Fatec/API-2RP-NET/tree/master/Sprint%202) - 19/09/2022 a 09/10/2022
 
-- [x] [SPRINT 3]- 13/10/2022 a 06/11/2022
+- [x] SPRINT 3- 13/10/2022 a 06/11/2022
 
-- [x] [SPRINT 4] - 07/11/2022 a 27/11/2022
+- [x] SPRINT 4 - 07/11/2022 a 27/11/2022
 
 - [x] Feira de Soluções - 08/12/2022 às 19h
 
@@ -167,4 +167,3 @@ Acesse o link para visualizar:
 * [VS Code](https://code.visualstudio.com/)
 
 </details>
-
