@@ -19,7 +19,7 @@
 
 ###  :space_invader: Quem somos nós:
 
-  Somos um grupo criado para o API do 4º Semestre de Analise e Desenvolvimento de Sistemas da Faculdade Tecnológica Prof. Jessen Vidal - FATEC São José dos Campos. Estamos na busca de solucionar o problema apresentado, adquirindo experiência na metodologia de aprendizado via API, conhecimento de novas tecnologias que até então desconhecidas por nós, com isso aplicaremos esse conhecimento da melhor forma para alcançar o objetivo do grupo.
+  Somos um grupo criado para o API do 4º Semestre de Análise e Desenvolvimento de Sistemas da Faculdade Tecnológica Prof. Jessen Vidal - FATEC São José dos Campos. Estamos na busca de solucionar o problema apresentado, adquirindo experiência na metodologia de aprendizado via API, conhecimento de novas tecnologias que até então desconhecidas por nós, com isso aplicaremos esse conhecimento da melhor forma para alcançar o objetivo do grupo.
 
 <hr> 
   
@@ -49,7 +49,7 @@
 <div align="center">
 <img src="https://cdn.discordapp.com/attachments/982353318422675476/1020717590626189412/unknown.png" width="500px" />
 </div>
-A 2RP NET é uma empresa de dados e soluções tecnológicas, seus colaboradores presisam apontar suas horas extras e sobreavisos seguindo certas regras e seus gestores precisam aprova-las.
+A 2RP NET é uma empresa de dados e soluções tecnológicas, seus colaboradores precisam apontar suas horas extras e sobreavisos seguindo certas regras e seus gestores precisam aprová-las.
 <br/>
 O desafio é fazer um Sistema que faça o controle da jornada de trabalho do colaborador, identifique e classifique horas extras,
 controle das horas extras e sobreavisos, integração para consumo de dados dos colaboradores com o
