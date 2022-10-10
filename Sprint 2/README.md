@@ -16,13 +16,13 @@ Nessa sprint focamos em entregar a parte de login de usuario e telas do gestor
 ## Backlog da Sprint 2
   
  
-  |  ID  | Sprint |    Quem?    |                          User Story                          |                           Por quê?                           | Planning Poker | Estimativa - Horas | Prioridade (1-5)  |
-|:----:|:------:|:-----------:|:------------------------------------------------------------:|:------------------------------------------------------------:|:----------------:|:-----------------------------------------:|:-----------------:|
-| US01 |    1   | Colaborador | Desejo apontar horário das minhas pretensões de horas extras |  Para que meu gestor possa verificar e validar a solicitação |                 8                 |                     12                    |         5         |
-| US02 |    1   | Colaborador | Desejo apontar horário das minhas pretensões dos sobreavisos |  Para que meu gestor possa verificar e validar a solicitação |                 2                 |                     4                     |         5         |
-| US03 |    1   | Colaborador |            Desejo consultar minhas horas apontadas           |  Para que meu gestor possa verificar e validar a solicitação |                 3                 |                     6                     |         4         |
-| US04 |    1   | Colaborador |             Desejo editar minhas horas apontadas             | Para que em caso de erros, possa ser corrigido a solicitação |                 3                 |                     6                     |         3         |
-  
+ |  ID  | Sprint |      Quem?     |                            User Story                           |                                           Por quê?                                           | Estimativa 0-100 (Planning Poker) | Estimativa 0-100 (Planning Poker) - Horas | Importância  |
+|:----:|:------:|:--------------:|:---------------------------------------------------------------:|:--------------------------------------------------------------------------------------------:|:---------------------------------:|:-----------------------------------------:|:------------:|
+| US05 |    2   | Todos usuários | Desejo realizar login no sistema integrado com o sistema da 2RP | Para salvar meus registros com as mesmas informações que nos outro sistemas da mesma empresa |                 2                 |                     15                    |     Media    |
+| US06 |    2   |     Gestor     | Desejo permitir/recusar apontamentos feitos pelos colaboradores |                          Para que o colaborador saiba de seu horário                         |                 4                |                     4                     |  Muito Alta  |
+| US07 |    2   |     Gestor     |        Desejo consultar informações de todos apontamentos       |           Para que possa consultar todos apontamentos, sendo eles pendentes ou não           |                   4              |                     4                     |  Muito Alta  |
+| US08 |    2   |     Gestor     |                Filtrar consultas dos apontamentos               |     Para que possa visualizar de uma forma melhor e mais rápida os apontamentos desejados    |                 4                |                     4                     |     Media    |
+| US09 |    2   |     Gestor     |         Desejo realizar apontamentos de outros usuários         |    Para que os colaboradores tenham conhecimento da hora que irão realizar suas atividades   |                 6              |                     6                     |  Muito Alta  |
 <hr>
 
 
