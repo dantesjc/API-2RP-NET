@@ -1,8 +1,9 @@
 import './header.css'
 
 import React from 'react'
+import { headerProp } from '../../interface/header-prop';
 
-function Header(props) {
+export default function Header(props: headerProp) {
 
     return (
         <>
@@ -12,5 +13,3 @@ function Header(props) {
         </>
     );
 }
-
-export default Header

@@ -6,7 +6,7 @@ import './gestor.css'
 import React, { Component, useEffect, useState } from 'react';
 
 
-function Gestor() {
+export default function Gestor() {
     return (
         <Sidebar>
           <Header nome="Horas Extras"></Header>
@@ -54,5 +54,3 @@ function Gestor() {
         </Sidebar>
     )
 }
-
-export default Gestor

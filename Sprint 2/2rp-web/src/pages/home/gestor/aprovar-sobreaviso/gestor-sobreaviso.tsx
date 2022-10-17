@@ -1,12 +1,11 @@
 import Sidebar from "../../../../components/sidebar"
-import Header from "../../../../components/header/header";
+import Header from "../../../../components/header/header"
 import Card from "../../../../components/cards/Cards"
 import './gestor-sobreaviso.css'
 
 import React, { Component, useEffect, useState } from 'react';
 
-
-function GestorSobreaviso() {
+export default function GestorSobreaviso() {
     return (
         <Sidebar>
           <Header nome="Sobreaviso"></Header>
@@ -54,5 +53,3 @@ function GestorSobreaviso() {
         </Sidebar>
     )
 }
-
-export default GestorSobreaviso
