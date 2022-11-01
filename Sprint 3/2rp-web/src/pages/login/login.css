@@ -1,0 +1,37 @@
+.login{
+    background: #090d23
+    ;
+}
+.fundo{
+    background-color: #090d23;
+    width: 300px;
+    height: 50px;
+    color: #fff;
+}
+.fundoback{
+    background-color: #262d28;
+}
+.fundocolor{
+    background-color: #090d23;
+}  
+.background{
+    background-color: #9A9696;
+}
+.height{
+    height: 100vh;
+
+}
+.tpm{
+    margin-top: 150px;
+}
+.input{
+    width: 350px;
+    height: 40px;
+}
+.marg{
+    margin-top: 100px;
+    margin-left: 180px;
+}
+.svg{
+    margin-top: 3px;
+}
